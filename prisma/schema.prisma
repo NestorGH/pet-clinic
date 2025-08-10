@@ -59,7 +59,7 @@ model Pet {
   color       String
   feature     String
   weight      Float
-  status      Int //Booleano o bit?
+  status      Int //Booleano, bit, string?
   record      Record[]
   appointment Appointment[]
   owner       Client        @relation(fields: [ownerId], references: [id])
