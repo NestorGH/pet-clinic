@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { VetServiceService } from './vet-service.service';
 import { CreateVetServiceDto } from './dto/create-vet-service.dto';
 import { UpdateVetServiceDto } from './dto/update-vet-service.dto';
-import { ApiBody, ApiOkResponse } from '@nestjs/swagger';
+import { ApiBody, ApiCreatedResponse, ApiOkResponse } from '@nestjs/swagger';
 import { VetServiceEntity } from './entities/vet-service.entity';
 
 @Controller('vet-service')
@@ -11,7 +11,7 @@ export class VetServiceController {
 
   @Post()
   @ApiBody({ type: CreateVetServiceDto })
-  @ApiOkResponse({ type: VetServiceEntity })
+  @ApiCreatedResponse({ type: VetServiceEntity })
   create(@Body() createVetServiceDto: CreateVetServiceDto) {
     return this.vetServiceService.create(createVetServiceDto);
   }

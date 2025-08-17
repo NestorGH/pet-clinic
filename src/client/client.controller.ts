@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ClientService } from './client.service';
 import { CreateClientDto } from './dto/create-client.dto';
 import { UpdateClientDto } from './dto/update-client.dto';
-import { ApiBody, ApiOkResponse } from '@nestjs/swagger';
+import { ApiBody, ApiCreatedResponse, ApiOkResponse } from '@nestjs/swagger';
 import { ClientEntity } from './entities/client.entity';
 
 @Controller('client')
@@ -11,6 +11,7 @@ export class ClientController {
 
   @Post()
   @ApiBody({type: CreateClientDto})
+  @ApiCreatedResponse({type: ClientEntity})
   create(@Body() createClientDto: CreateClientDto) {
     return this.clientService.create(createClientDto);
   }
