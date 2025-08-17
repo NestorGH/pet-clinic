@@ -73,8 +73,8 @@ model Service {
   name          String      @unique //Vacuna, cirugia, limpieza, grooming, etc
   description   String
   price         Float
-  appointment   Appointment @relation(fields: [appointmentId], references: [id])
-  appointmentId Int //FK
+  appointment   Appointment? @relation(fields: [appointmentId], references: [id])
+  appointmentId Int? //FK
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
 }
