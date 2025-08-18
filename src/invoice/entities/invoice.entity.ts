@@ -5,6 +5,9 @@ export class InvoiceEntity {
     total: number
 
     @ApiProperty()
+    clientId: number
+
+    @ApiProperty()
     createdAt: Date;
 
     @ApiProperty()
