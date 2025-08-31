@@ -1,5 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger"
-import { IsDate, IsDecimal, IsInt, IsNumber, IsString } from "class-validator"
+import { Type } from "class-transformer"
+import { IsArray, IsDate, IsDecimal, IsInt, IsNumber, IsString, ValidateNested } from "class-validator"
+import { CreateVetServiceDto } from "src/vet-service/dto/create-vet-service.dto"
 
 export class CreateAppointmentDto {
     @ApiProperty()
@@ -17,5 +19,9 @@ export class CreateAppointmentDto {
     @ApiProperty()
     @IsInt()
     petId: number
+
+    @ApiProperty()
+    @IsInt()
+    serviceId: number;
 
 }
