@@ -80,6 +80,7 @@ model Service {
 }
 
 //Cita medica
+//TODO: create service
 model Appointment {
   id              Int       @id @default(autoincrement())
   appointmentDate DateTime
@@ -96,6 +97,7 @@ model Appointment {
 }
 
 //Expediente clinico 
+//TODO: create service
 model Record {
   id         Int      @id @default(autoincrement())
   diagnostic String
