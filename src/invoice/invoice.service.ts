@@ -17,11 +17,19 @@ export class InvoiceService {
       if (!client) {
         throw new BadRequestException(`Client with ID ${createInvoiceDto.clientId} not found`);
       }
-
+      //TODO: add vet service
       return await this.databaseService.invoice.create({
         data: {
           total: createInvoiceDto.total,
-          clientId: createInvoiceDto.clientId
+          clientId: createInvoiceDto.clientId,
+          appointment: {
+            create: createInvoiceDto.appointments.map(appointment => ({
+              appointmentDate: appointment.appointmentDate,
+              status: appointment.status,
+              vetId: appointment.vetId,
+              petId: appointment.petId
+            })) || []
+          }
         }
       });
 

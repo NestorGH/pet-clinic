@@ -18,8 +18,4 @@ export class CreateAppointmentDto {
     @IsInt()
     petId: number
 
-    @ApiProperty()
-    @IsInt()
-    invoiceId: number
-
 }

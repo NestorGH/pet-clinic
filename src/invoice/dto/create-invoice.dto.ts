@@ -1,5 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDecimal, IsInt } from "class-validator";
+import { Type } from "class-transformer";
+import { IsArray, IsDecimal, IsInt, ValidateNested } from "class-validator";
+import { CreateAppointmentDto } from "src/appointment/dto/create-appoointment.dto";
 
 export class CreateInvoiceDto {
     @ApiProperty()
@@ -9,4 +11,10 @@ export class CreateInvoiceDto {
     @ApiProperty()
     @IsInt()
     clientId: number
+
+    @ApiProperty({ type: [CreateAppointmentDto] })
+    @IsArray()
+    @ValidateNested({ each: true })
+    @Type(() => CreateAppointmentDto)
+    appointments: CreateAppointmentDto[];
 }
