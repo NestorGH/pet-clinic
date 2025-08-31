@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class Pet {
+export class PetEntity {
     @ApiProperty()
     name: string
 
@@ -28,7 +28,7 @@ export class Pet {
     @ApiProperty()
     status: number
 
-    //RECORD
+    //TODO: RECORD
 
     //appointment
 
