@@ -85,7 +85,7 @@ model Appointment {
   id              Int       @id @default(autoincrement())
   appointmentDate DateTime
   service         Service[]
-  status          Int //pendiente, confirmada, cancelada //TODO: change data Type
+  status          String //pendiente, confirmada, cancelada
   vet             User      @relation(fields: [vetId], references: [id])
   vetId           Int //FK
   pet             Pet       @relation(fields: [petId], references: [id])
