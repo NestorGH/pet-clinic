@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { DatabaseService } from 'src/database/database.service';
 import * as bcrypt from 'bcrypt';
 import { Prisma } from 'generated/prisma';
+import { UserEntity } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
@@ -80,5 +81,19 @@ export class UserService {
       where: { id },
     });
     return user;
+  }
+
+  //Auth find user
+  async findOneName(name: string): Promise<UserEntity | undefined> {
+    const user = await this.databaseService.user.findFirst({
+      where: { name }
+    })
+
+    if (!user) {
+      throw new NotFoundException('User with the specified name does not exist.');
+    }
+
+    return user as UserEntity;
+
   }
 }
