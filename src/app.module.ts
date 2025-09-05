@@ -6,9 +6,10 @@ import { UserModule } from './user/user.module';
 import { ClientModule } from './client/client.module';
 import { VetServiceModule } from './vet-service/vet-service.module';
 import { InvoiceModule } from './invoice/invoice.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [DatabaseModule, UserModule, ClientModule, VetServiceModule, InvoiceModule],
+  imports: [DatabaseModule, UserModule, ClientModule, VetServiceModule, InvoiceModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
