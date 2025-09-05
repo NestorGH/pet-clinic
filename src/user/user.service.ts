@@ -84,7 +84,7 @@ export class UserService {
   }
 
   //Auth find user
-  async findOneName(name: string): Promise<UserEntity | undefined> {
+  async findOneName(name: string): Promise<UserEntity> {
     const user = await this.databaseService.user.findFirst({
       where: { name }
     })
