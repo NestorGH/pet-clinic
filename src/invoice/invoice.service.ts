@@ -18,6 +18,7 @@ export class InvoiceService {
         throw new BadRequestException(`Client with ID ${createInvoiceDto.clientId} not found`);
       }
       return await this.databaseService.invoice.create({
+        include: {appointment: true},
         data: {
           total: createInvoiceDto.total,
           clientId: createInvoiceDto.clientId,

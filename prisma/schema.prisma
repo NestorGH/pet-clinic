@@ -80,7 +80,6 @@ model Service {
 }
 
 //Cita medica
-//TODO: create service
 model Appointment {
   id              Int       @id @default(autoincrement())
   appointmentDate DateTime
