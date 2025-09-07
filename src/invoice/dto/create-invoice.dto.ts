@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
 import { IsArray, IsDecimal, IsInt, ValidateNested } from "class-validator";
-import { CreateAppointmentDto } from "src/appointment/dto/create-appoointment.dto";
+import { CreateAppointmentDto } from "../../appointment/dto/create-appoointment.dto";
 
 export class CreateInvoiceDto {
     @ApiProperty()
