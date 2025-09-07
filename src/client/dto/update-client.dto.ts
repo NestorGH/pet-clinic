@@ -1,7 +1,7 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateClientDto } from './create-client.dto';
 import { IsEmail, IsString } from 'class-validator';
-import { UpdatePetDto } from 'src/pet/dto/update-pet.dto';
+import { UpdatePetDto } from '../../pet/dto/update-pet.dto';
 
 export class UpdateClientDto {
     @ApiProperty()
