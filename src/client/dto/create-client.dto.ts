@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger"
 import { Type } from "class-transformer"
 import { IsArray, IsEmail, IsString, ValidateNested } from "class-validator"
-import { CreatePetDto } from "src/pet/dto/create-pet.dto"
+import { CreatePetDto } from "../../pet/dto/create-pet.dto"
 
 export class CreateClientDto {
     @ApiProperty()
