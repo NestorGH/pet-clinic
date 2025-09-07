@@ -2,7 +2,7 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { CreateVetServiceDto } from './dto/create-vet-service.dto';
 import { UpdateVetServiceDto } from './dto/update-vet-service.dto';
 import { DatabaseService } from 'src/database/database.service';
-import { Prisma } from 'generated/prisma';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class VetServiceService {
