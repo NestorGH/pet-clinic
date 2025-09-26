@@ -92,6 +92,10 @@ export class InvoiceService {
       throw new NotFoundException('The record with the specified ID does not exist or has been deleted.');
     }
 
+    await this.databaseService.appointment.deleteMany({
+      where: { invoiceId: id },
+    });
+
     await this.databaseService.invoice.delete({
       where: { id },
     });
